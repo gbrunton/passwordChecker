@@ -17,10 +17,8 @@ namespace passwordChecker
             while (true)
             {
                 Console.Write("Enter password: ");
-                var password = GetPasswordFromConsole();
                 Console.WriteLine();
-                var hashString = SHA1HashStringForUTF8String(password);
-                password = null;
+                var hashString = SHA1HashStringForUTF8String(GetPasswordFromConsole());
                 using (var connection = new SqlConnection(stringBuilder.ConnectionString))
                 using (var command = connection.CreateCommand())
                 {
@@ -75,7 +73,10 @@ namespace passwordChecker
       (           
          ROWTERMINATOR ='\n',
          BATCHSIZE = 100000
-      ); ";
+      ); 
+
+CREATE NONCLUSTERED INDEX [Password_Value_Index] ON [Password] ([Value]);
+";
                 command.ExecuteNonQuery();
             }
         }
