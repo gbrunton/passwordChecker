@@ -10,7 +10,7 @@ namespace passwordChecker
     {
         static void Main(string[] args)
         {
-            var stringBuilder = new SqlConnectionStringBuilder(@"data source=phxmigrations\extracts;Initial Catalog=Passwords;Integrated Security=SSPI;");
+            var stringBuilder = new SqlConnectionStringBuilder(@"data source=.;Initial Catalog=Passwords;Integrated Security=SSPI;");
             //CreateDb(stringBuilder);
             //InsertData(stringBuilder, @"c:\temp\");
 
