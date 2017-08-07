@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "passwordChecker": {
+      "commandName": "Project"
+    }
+  }
+}
